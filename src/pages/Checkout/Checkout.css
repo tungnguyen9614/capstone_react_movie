@@ -1,0 +1,52 @@
+.ghe  { /* Ghế thường */
+    width: 35px;
+    height: 35px;
+    border:none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 15px;
+    background-color: rgb(123, 122, 122);
+    color: white;
+}
+
+.ghe:hover {
+    border: 2px solid green;
+}
+
+.gheDaDat {
+    background-color: rgb(226, 20, 20);
+    cursor: no-drop;
+}
+
+.gheDangDat {
+    background-color: rgb(54, 230, 54) !important;
+}
+
+.gheVip {
+    background-color: rgb(225, 102, 9) !important;
+}
+
+.gheDaDuocDat { /* ghế đc chính mình đặt */
+    background-color: rgb(247, 235, 235);
+    -webkit-box-shadow: -1px -2px 18px -14px #000000; 
+    box-shadow: -1px -2px 18px -10px #000000;
+    color: orange !important;
+    border: 1px solid black;
+}
+
+.upper-layer {
+    min-height: 100vh;
+    width: 100%;
+    padding: 100px 0 0 0;
+  /*the alpha value controls the transparency*/
+    background: rgba( 255, 255, 255, 0.3 );
+  
+  /* This controls the blurring effect*/
+  backdrop-filter: blur( 7.5px );
+    -webkit-backdrop-filter: blur( 7.5px );
+  
+  /*Adding the shadow*/
+  box-shadow: 0 8px 32px 0 rgba( 0, 0, 0, 0.18 );
+
+    z-index: 4;
+}
