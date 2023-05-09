@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment, useEffect } from "react";
 import { Redirect,Route } from "react-router-dom";
 import { user } from "../../util/settings/config";
 import Footer from "../HomeTemplate/Layout/Footer/Footer";
@@ -6,6 +6,10 @@ import Header from "../HomeTemplate/Layout/Header/Header";
 
 const CheckoutTemplate = (props) => { //path, exact, Component
   const { Component, ...restProps } = props;
+
+  useEffect(()=>{
+    window.scrollTo(0, 0)
+  })
 
   if(!localStorage.getItem(user)){
     return <Redirect to='/login'/>

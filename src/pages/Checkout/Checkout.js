@@ -117,7 +117,8 @@ const Checkout = (props) => {
                       </td>
 
                       <td className="text-center">
-                        <button className="ghe gheDaDat">00</button>
+                        <button className="ghe gheDaDat"><CloseOutlined/></button>
+                        <button className="ghe gheVip"><CloseOutlined/></button>
                       </td>
 
                       <td className="text-center">
@@ -244,7 +245,7 @@ function callback(key) {
   console.log(key);
 }
 
-export default function (props) {
+export default function CheckoutTab(props) {
   return (
     <div>
       <Tabs className="pt-20" defaultActiveKey="1" centered onChange={callback}>
@@ -273,7 +274,7 @@ function KetQuaDatVe(props) {
 
   const renderTicketItem = () => {
     return thongTinNguoiDung.thongTinDatVe?.map((ticket, index) => {
-      const seat = _.first(ticket.danhSachGhe)
+      const seat = _.first(ticket.danhSachGhe);
 
       return (
         <div key={index} className="p-2 lg:w-1/3 md:w-1/2 w-full">
@@ -283,30 +284,34 @@ function KetQuaDatVe(props) {
               className="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
               src={ticket.hinhAnh}
             />
-            <div className="flex-grow">
-              <h2 className="text-gray-900 text-lg font-medium">{ticket.tenPhim}</h2>
-              <p className="text-gray-600 text-base">Ngày chiếu: {moment(ticket.ngayDat).format('DD-MM-YYYY')}</p>
-              <p className="text-gray-600 text-base">Giờ chiếu: {moment(ticket.ngayDat).format('hh:mm A ')}</p>
-              <p>Cụm rạp: {seat.tenHeThongRap}</p>
-              <p>Rạp:  {seat.tenCumRap}</p>
-              <p>Ghế đã đặt: </p>
-              <table>
-                <thead>
-                  <tr>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                  {ticket.danhSachGhe.map((ghe)=>{
-                return <td key={ghe.maGhe} className='ghe gheDaDat text-center'>{ghe.tenGhe}</td>
-              })}
-                  </tr>
-                </tbody>
-              </table>
-            
+            <div className="">
+              <h2 className="text-pink-700 text-lg font-medium">
+                {ticket.tenPhim}
+              </h2>
+              <p className="text-gray-600 text-base">
+                <b>Giờ chiếu:</b> {moment(ticket.ngayDat).format("hh:mm A ")} -{" "}
+                <b>Ngày chiếu:</b> {moment(ticket.ngayDat).format("DD-MM-YYYY")}
+              </p>
+              <p>
+                <b>Địa chỉ:</b> {seat.tenHeThongRap}
+              </p>
+              <p>
+                <b>Tên Rạp:</b> {seat.tenCumRap}
+              </p>
+              <div className="grid grid-cols-6">
+                <div className="col-span-1">
+                  <p className="font-bold text-lg mt-0.5">Ghế: </p>
+                </div>
+                <div className="col-span-5">
+                  {ticket.danhSachGhe.map((ghe) => {
+                    return (
+                      <button key={ghe.maGhe} className="ketQuaGhe text-center">
+                        {ghe.tenGhe}
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
             </div>
           </div>
         </div>

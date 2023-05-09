@@ -1,5 +1,5 @@
 import { ThongTinPhongVe } from "../../_core/models/ThongTinPhongVe";
-import { DAT_VE, SET_CHI_TIET_PHONG_VE } from "../actions/types/QuanLyDatVeType";
+import { DAT_VE, DAT_VE_HOAN_TAT, SET_CHI_TIET_PHONG_VE } from "../actions/types/QuanLyDatVeType";
 
 const stateDefault = {
     chiTietPhongVe: new ThongTinPhongVe(),
@@ -27,6 +27,11 @@ export const QuanLyDatVeReducer = (state = stateDefault, action) => {
             }
 
             return {...state, danhSachGheDangDat:danhSachGheCapNhat}
+        }
+
+        case DAT_VE_HOAN_TAT: {
+            state.danhSachGheDangDat = [];
+            return {...state}
         }
 
         default:

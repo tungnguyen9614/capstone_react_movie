@@ -6,7 +6,7 @@ const Film_Flip = (props) => {
   const { phim } = props;
 
   return (
-    <div className="flip-card mt-2">
+    <div className="flip-card my-2">
       <div className="flip-card-inner">
         <div className="flip-card-front">
           <img
@@ -40,7 +40,7 @@ const Film_Flip = (props) => {
 
       <div onClick={()=>{
         history.push(`/detail/${phim.maPhim}`)
-      }} className=" bg-orange-300 text-center cursor-pointer py-2  my-2 text-green-100 font-bold">ĐẶT VÉ</div>
+      }} className=" bg-black  text-center cursor-pointer py-2 my-2 text-white font-bold">ĐẶT VÉ</div>
     </div>
     </div>
   );

@@ -12,6 +12,8 @@ import CheckoutTemplate from "./templates/CheckoutTemplate/CheckoutTemplate";
 import Checkout from "./pages/Checkout/Checkout";
 import {Suspense, lazy} from 'react'
 import { UserTemplate } from "./templates/UserTemplate/UserTemplate";
+import Profile from "./pages/Profile/Profile";
+import Loading from "./components/Loading/Loading";
 
 // const CheckoutTemplateLazy = lazy(()=>import ("./templates/CheckoutTemplate/CheckoutTemplate"))
 
@@ -20,15 +22,17 @@ export const history = createBrowserHistory();
 function App() {
   return (
     <Router history={history}>
+      <Loading/>
       <Switch>
         <HomeTemplate path="/home" exact Component={Home} />
         <HomeTemplate path="/contact" exact Component={Contact} />
         <HomeTemplate path="/news" exact Component={News} />
         <HomeTemplate path="/detail/:id" exact Component={Detail} />
-        
-        <Route path="/register" exact Component={Register} />
+        <HomeTemplate path="/profile" exact Component={Profile} />
 
         <CheckoutTemplate path="/checkout/:id" exact Component={Checkout}/>
+
+        <UserTemplate path="/register" exact Component={Register} />
         <UserTemplate path="/login" exact Component={Login} />
 
         {/* <Suspense fallback={<h1>Loading...</h1>}>
