@@ -13,7 +13,7 @@ export const dangNhapAction = (thongTinDangNhap) => {
                     thongTinDangNhap: result.data.content
                 })
                 //Chuyển hướng về trang trước đó
-                history.goBack()
+                history.push('/home')
 
             }
 

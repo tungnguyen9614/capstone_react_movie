@@ -32,7 +32,7 @@ function App() {
 
         <CheckoutTemplate path="/checkout/:id" exact Component={Checkout}/>
 
-        <UserTemplate path="/register" exact Component={Register} />
+        <Register path="/register" exact Component={Register} />
         <UserTemplate path="/login" exact Component={Login} />
 
         {/* <Suspense fallback={<h1>Loading...</h1>}>

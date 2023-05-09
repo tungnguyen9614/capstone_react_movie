@@ -5,8 +5,9 @@ export const userServices = {
     return http.post(`api/QuanLyNguoiDung/DangNhap`, thongTinDangNhap);
   },
 
-  layThongTinNguoiDung: () => {
-    return http.post('api/QuanLyNguoiDung/ThongTinTaiKhoan')
-  }
+  dangKy: (payload) => http.post(`api/QuanLyNguoiDung/DangKy`, payload),
 
+  layThongTinNguoiDung: () => {
+    return http.post("api/QuanLyNguoiDung/ThongTinTaiKhoan");
+  },
 };

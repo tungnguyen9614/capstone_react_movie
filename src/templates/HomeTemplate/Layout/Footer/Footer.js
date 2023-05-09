@@ -28,7 +28,7 @@ const Footer = () => {
             </a>
           </div>
           <div className="col-span-6 text-center md:text-left md:col-span-3">
-            <p className="pb-1 text-xl font-medium">PARTNERS</p>
+            <p className="pb-1 text-xl font-medium">ĐỐI TÁC</p>
             <div className="grid grid-cols-3 gap-2">
               {arrHeThongRap.map(item => {
                 return <div key={item.maHeThongRap}>
