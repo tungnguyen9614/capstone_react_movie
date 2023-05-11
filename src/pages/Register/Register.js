@@ -1,6 +1,9 @@
+import { message } from 'antd';
+import { result } from 'lodash';
 import React from 'react'
 import { useForm } from 'react-hook-form';
 import { NavLink } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import { history } from '../../App';
 import { userServices } from '../../services/user.services';
 
@@ -30,12 +33,12 @@ const Register = () => {
       <form className='mt-10' onSubmit={handleSubmit(async (value)=>{
         try {
           const result = await userServices.dangKy(value)
-          if (result.data.statusCode !== 400){
-            alert('Đăng ký tài khoản thành công')
+          if (result?.data?.statusCode !== 400){
+            toast.success('Đăng ký tài khoản thành công')
             history.push('/login')
           }
         } catch (error) {
-          
+          message.error('Đăng ký tài khoản thất bại')
         }
       })}>
         <div className="grid gap-6 mb-6 md:grid-cols-2">

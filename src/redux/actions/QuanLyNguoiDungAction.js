@@ -1,3 +1,4 @@
+import { message } from "antd";
 import { history } from "../../App";
 import { userServices } from "../../services/user.services";
 import { DANG_NHAP_ACTION, SET_THONG_TIN_NGUOI_DUNG } from "./types/QuanLyNguoiDungType";
@@ -14,10 +15,7 @@ export const dangNhapAction = (thongTinDangNhap) => {
                 })
                 //Chuyển hướng về trang trước đó
                 history.push('/home')
-
             }
-
-            console.log({result});
         } catch (error) {
             console.log('error',error.response.data);
         }

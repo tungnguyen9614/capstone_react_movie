@@ -103,10 +103,10 @@ const Checkout = (props) => {
                 <table className="w-2/3 divide-y divide-gray-700">
                   <thead className="bg-gray-500 ">
                     <tr>
-                      <th className="py-2">Ghế chưa đặt</th>
+                      <th className="py-2">Ghế thường chưa đặt</th>
                       <th>Ghế người khác đặt</th>
                       <th>Ghế đang đặt</th>
-                      <th>Ghế VIP</th>
+                      <th>Ghế VIP chưa đặt</th>
                       <th>Ghế đã được bạn đặt</th>
                     </tr>
                   </thead>
@@ -123,6 +123,7 @@ const Checkout = (props) => {
 
                       <td className="text-center">
                         <button className="ghe gheDangDat">00</button>
+                        <button className="ghe gheVip gheDangDat">00</button>
                       </td>
 
                       <td className="text-center">
@@ -131,6 +132,9 @@ const Checkout = (props) => {
 
                       <td className="text-center">
                         <button className="ghe gheDaDuocDat">
+                          <UserDeleteOutlined />
+                        </button>
+                        <button className="ghe gheVip gheDaDuocDat">
                           <UserDeleteOutlined />
                         </button>
                       </td>
@@ -270,7 +274,7 @@ function KetQuaDatVe(props) {
 
   useEffect(() => {
     dispatch(layThongTinNguoiDungAction());
-  }, []);
+  }, [thongTinNguoiDung]);
 
   const renderTicketItem = () => {
     return thongTinNguoiDung.thongTinDatVe?.map((ticket, index) => {

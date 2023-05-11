@@ -10,10 +10,12 @@ import 'antd/dist/reset.css';
 //React Slick
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
+import { ToastMessage } from "./module/ToastMessage";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <Provider store={store}>
+    <ToastMessage/>
     <App />
   </Provider>
 );
